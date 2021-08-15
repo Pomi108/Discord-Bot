@@ -43,6 +43,7 @@ ___
 |       Field name        |               Example value                |                                Description                                |
 |:-----------------------:|:------------------------------------------:|:-------------------------------------------------------------------------:|
 |      CLIENT_TOKEN       |                    "-"                     |  The token you copied from the Developer Portal, used to login the bot.   |
+|        CLIENT_ID        |                    "-"                     |                            That's the bot ID.                             |
 |         PREFIX          |                    "/"                     |              This is the character used to execute commands.              |
 | UIDR, UIDJ, UIDD, UIDT  |            "123456789123456789"            |                The user id's of the four bot maintainers.                 |
 |       MAINTENANCE       |                  "false"                   |    Makes all commands maintainer-only, sets status to do not disturb.     |
