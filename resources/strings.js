@@ -69,6 +69,7 @@ const HELP_DESC_TRANSLATE = 'Translates messages to the selected language.'
 const HELP_DESC_WEBSITE = 'Displays website for the given keyword, see examples for keywords.'
 const HELP_DESC_COMPARE = 'Allows vanilla / pack comparaison side by side'
 const HELP_DESC_MISSING = 'Shows tree view of missing textures for a particular edition'
+const HELP_DESC_COMMANDS = 'Deploys or remove slash commands descriptions'
 
 // animate function
 const INPUT_TOO_BIG = 'The input picture is too big!'
@@ -145,6 +146,8 @@ const COLOR_HEX_WRONG_DIGITS = '**HEX**: You must specify **3 __or__ 6 __or__ 8*
 // magnify command
 const MAGNIFY_FACTOR_TOO_SMALL = 'The factor must be greater than 1.'
 const MAGNIFY_NO_ARGS_GIVEN = 'You did not provide any arguments.'
+
+const COMMANDS_NO_SERVER_ID_GIVEN = 'You did not provide a correct server ID or typed --global correctly.'
 
 // push command
 const PUSH_ARG1_INVALID = 'No author given! '
@@ -260,6 +263,7 @@ module.exports = {
 	HELP_DESC_WEBSITE,
 	HELP_DESC_COMPARE,
 	HELP_DESC_MISSING,
+	HELP_DESC_COMMANDS,
 
 	COMMAND_USES_ANYONE,
 	COMMAND_USES_ANYONE_DUNGEONS,
@@ -318,6 +322,8 @@ module.exports = {
 
 	MAGNIFY_FACTOR_TOO_SMALL,
 	MAGNIFY_NO_ARGS_GIVEN,
+
+	COMMANDS_NO_SERVER_ID_GIVEN,
 
 	PUSH_ARG1_INVALID,
 	PUSH_ARG2_INVALID,

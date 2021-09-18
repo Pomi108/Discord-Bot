@@ -8,10 +8,12 @@
  */
 
 // Libraries
-const fs = require('fs')
 const Discord = require('discord.js')
 const { walkSync } = require('./helpers/walkSync')
 require('dotenv').config()
+
+// add DEV ROLES
+process.env.UIDA = Object.keys(process.env).filter(key => key.startsWith('UID') && key.length == 4).reduce((acc, cur) => [...acc, process.env[cur]], [])
 
 // eslint-disable-next-line no-unused-vars
 const { Client, Intents } = require('discord.js')
@@ -54,13 +56,21 @@ for (const file of commandFiles) {
 		client.commands.set(command.name, command)
 }
 
+// register slash commands
+const slashFiles = walkSync('./slash_commands').filter(f => f.endsWith('.js'))
+for(const file of slashFiles) {
+	const command = require(file)
+	if (command.data && command.data.name && typeof(command.data.name) === 'string') 
+		client.commands.set(command.data.name, command)
+}
+
 /**
  * EVENT HANDLER
  * - See the /events folder
  */
-const eventsFiles = fs.readdirSync('./events').filter(f => f.endsWith('.js'))
+const eventsFiles = walkSync('./events').filter(f => f.endsWith('.js'))
 for (const file of eventsFiles) {
-	const event = require(`./events/${file}`)
+	const event = require(file)
 	if (event.once) client.once(event.name, (...args) => event.execute(...args))
 	else client.on(event.name, (...args) => event.execute(...args))
 }

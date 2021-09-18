@@ -9,6 +9,7 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName('ping')
     .setDescription(strings.HELP_DESC_PING),
+  /** @param {Discord.Interaction} interaction Discord interaction in /cmd */
   execute: async function(interaction) {
 
     const m = new Discord.MessageEmbed().setTitle('Ping?')
