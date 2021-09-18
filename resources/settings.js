@@ -7,6 +7,13 @@ const WARNING_IMG       = 'https://raw.githubusercontent.com/Compliance-Resource
 const ERROR_IMG         = 'https://raw.githubusercontent.com/Compliance-Resource-Pack/Discord-Bot/master/resources/images/error.png'
 const LOADING_IMG       = 'https://raw.githubusercontent.com/Compliance-Resource-Pack/Discord-Bot/master/resources/images/loading.gif'
 
+const REPO_JAVA_NAMES    = [ 'Compliance-Java-32x', 'Compliance-Java-64x' ]
+const REPO_BEDROCK_NAMES = ['Compliance-Bedrock-32x', 'Compliance-Bedrock-64x' ]
+const REPO_NAMES = [...REPO_JAVA_NAMES, ...REPO_BEDROCK_NAMES]
+
+const REPO_JAVA_BRANCHES    = [ '1.17.1', '1.16.5', '1.15.2', '1.14.4', '1.13.2', '1.12.2' ]
+const REPO_BEDROCK_BRANCHES = [ '1.17.0', '1.16.220' ]
+
 // Default texture repo for java
 const DEFAULT_MC_JAVA_REPOSITORY    = 'https://raw.githubusercontent.com/CompliBot/Default-Java/'
 const DEFAULT_MC_BEDROCK_REPOSITORY = 'https://raw.githubusercontent.com/CompliBot/Default-Bedrock/'
@@ -23,8 +30,8 @@ const LATEST_MC_BE_VERSION = '1.17.0'
 // Compliance 32x
 const C32_IMG           = 'https://raw.githubusercontent.com/Compliance-Resource-Pack/Discord-Bot/master/resources/images/Logos/Compliance%2032x.png'
 const C32_ID            = '773983706582482946'
-const C32_LOGS          = '798893497204998161' // #logs channel
-const C32_MOD_LOGS      = '776145239358046248' // #mod-log channel
+const C32_LOGS          = '829047608781176853' // #auto-report channel
+const C32_MOD_LOGS      = '776145239358046248' // #warn-and-mute channel
 const C32_COUNCIL_ID    = '775636065338785813' // Council role
 
 const C32_SUBMIT_TEXTURES = '773987409993793546' // #submit-textures
@@ -74,6 +81,12 @@ module.exports = {
 	WARNING_IMG,
 	ERROR_IMG,
 	LOADING_IMG,
+
+	REPO_JAVA_NAMES,
+	REPO_BEDROCK_NAMES,
+	REPO_NAMES,
+	REPO_JAVA_BRANCHES,
+	REPO_BEDROCK_BRANCHES,
 
 	DEFAULT_MC_JAVA_REPOSITORY,
 	DEFAULT_MC_BEDROCK_REPOSITORY,

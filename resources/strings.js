@@ -150,9 +150,9 @@ const MAGNIFY_NO_ARGS_GIVEN = 'You did not provide any arguments.'
 const PUSH_ARG1_INVALID = 'No author given! '
 const PUSH_ARG2_INVALID = 'No texture path given! '
 const PUSH_ARG3_INVALID = 'No repository given! '
-const PUSH_NOT_ATTACHED = 'You did not attached the texture! '
+const PUSH_NOT_ATTACHED = 'You didn\'t attach any image! '
 const PUSH_INVALID_REPO = 'This repository does not exist or is not supported'
-const PUSH_INVALID_FORMAT = 'Please provide a PNG, `.zip`, `.rar` & `.7zip` are not supported'
+const PUSH_INVALID_FORMAT = 'Please provide a .png file, `.zip`, `.rar` and `.7zip` files are not supported'
 const PUSH_USER_NOT_FOUND = 'User not found in cache'
 const PUSH_UNKNOWN_ID = 'It seems that this ID does not exist\n'
 const PUSH_TEXTURE_NOT_FOUND = 'Can\'t find this textures!'
@@ -160,6 +160,7 @@ const PUSH_TEXTURE_NOT_FOUND = 'Can\'t find this textures!'
 // texture command
 //const TEXTURE_DOESNT_EXIST = '**Note: this command isn\'t updated for 21w19a yet, if you\'re currently looking for a 21w19a texture**\nThe specified texture/folder doesn\'t exist!'
 const TEXTURE_DOESNT_EXIST = 'The specified texture/folder doesn\'t exist!'
+const TEXTURE_TOO_SHORT = 'The texture name is too short!'
 const TEXTURE_NOT_CHOSEN = 'Texture was not chosen fast enough'
 const TEXTURE_FAILED_LOADING = 'This texture has not yet been made or is not present on GitHub!'
 const TEXTURE_SEARCH_DESCRIPTION = 'Choose one texture using emoji reactions.\nIf you don\'t see what you\'re looking for, be more specific.\n'
@@ -329,6 +330,7 @@ module.exports = {
 	PUSH_TEXTURE_NOT_FOUND,
 
 	TEXTURE_DOESNT_EXIST,
+	TEXTURE_TOO_SHORT,
 	TEXTURE_NOT_CHOSEN,
 	TEXTURE_FAILED_LOADING,
 	TEXTURE_SEARCH_DESCRIPTION,

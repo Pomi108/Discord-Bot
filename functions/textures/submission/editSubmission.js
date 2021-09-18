@@ -3,7 +3,7 @@ const emojis   = require('../../../resources/emojis')
 const settings = require('../../../resources/settings')
 const strings  = require('../../../resources/strings')
 const colors   = require('../../../resources/colors')
-const fetch    = require('node-fetch')
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 const { Permissions }    = require('discord.js');
 const { addDeleteReact } = require('../../../helpers/addDeleteReact')
@@ -178,11 +178,12 @@ async function instapass(client, message) {
   if (message.channel.id == settings.C32_SUBMIT_TEXTURES)      channelOut = client.channels.cache.get(settings.C32_RESULTS)
   else if (message.channel.id == settings.C64_SUBMIT_TEXTURES) channelOut = client.channels.cache.get(settings.C64_RESULTS)
 
-  channelOut.send(
-    message.embeds[0]
+  channelOut.send({ embeds:
+    [message.embeds[0]
       .setColor(colors.GREEN)
       .setDescription(`[Original Post](${message.url})\n${message.embeds[0].description ? message.embeds[0].description : ''}`)
-  )
+    ]
+  })
   .then(async sentMessage => {
       for (const emojiID of [emojis.SEE_MORE]) await sentMessage.react(client.emojis.cache.get(emojiID))
     })
@@ -203,13 +204,13 @@ async function editEmbed(message) {
 
   if (embed.description !== null) embed.setDescription(message.embeds[0].description.replace(`[Original Post](${message.url})\n`, ''))
 
-  await message.edit(embed)
+  await message.edit({embeds: [embed]})
 }
 
 async function changeStatus(message, string) {
   let embed = message.embeds[0]
   embed.fields[1].value = string
-  await message.edit(embed)
+  await message.edit({embeds: [embed]})
 }
 
 async function removeReact(message, emojis) {
